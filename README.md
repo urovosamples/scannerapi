@@ -3,14 +3,15 @@
 
 > 如何使用scannerapi依赖项目
 
->Add it in your root build.gradle at the end of repositories:
+>Add it in your root setting.gradle at the end of repositories:
 ~~~JAVA
 
-allprojects {
-   repositories {
-   ...
-   maven { url 'https://jitpack.io' }
-   }
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+        repositories {
+        	mavenCentral()
+            maven { url 'https://jitpack.io' }
+    }
 }
 
 ~~~
@@ -18,6 +19,6 @@ allprojects {
 ~~~JAVA
 
 dependencies {
-    implementation 'com.github.urovosamples:scannerapi:5.2.2'
+    implementation 'com.github.urovosamples:scannerapi:5.2.6'
 }
 ~~~
